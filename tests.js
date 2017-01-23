@@ -94,7 +94,6 @@ function testForEachValue(iterableObject) {
     function copyValueToArray(value, array){
         array.push(value);
     }
-    return testArray;
 }
 
 
