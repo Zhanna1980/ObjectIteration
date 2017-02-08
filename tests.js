@@ -2,9 +2,9 @@
  * Created by zhannalibman on 23/01/2017.
  */
 
-const objIteration = require("./ObjectIteration.js");
+const objIteration = require("./orderedMap.js");
 
-runTests();
+// runTests();
 
 
 function runTests() {
@@ -15,7 +15,7 @@ function runTests() {
         testGetValueByIndex(iterObj);
         testGetValueByKey(iterObj);
         testGetIndex(iterObj);
-        testForEachValue(iterObj);
+        testForEach(iterObj);
         console.log("PASS");
     }
     catch(err) {
@@ -36,7 +36,7 @@ function createObject(){
 
 function testAddKey(iterableObject) {
     for (var i = 0; i < 10; i++) {
-        iterableObject.addKey("k" + i, i);
+        iterableObject.push("k" + i, i);
         if(iterableObject._obj["k" + i] !== i){
             throw Error("Add failed");
         }
@@ -79,9 +79,9 @@ function testGetIndex(iterableObject) {
     }
 }
 
-function testForEachValue(iterableObject) {
+function testForEach(iterableObject) {
     var testArray = [];
-    iterableObject.forEachValue(function (value){
+    iterableObject.forEach(function (value){
         copyValueToArray(value, testArray);
     });
 
